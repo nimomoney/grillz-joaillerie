@@ -11,7 +11,7 @@ if (produit) {
     // On remplit les balises de article.html
     document.getElementById('prod-title').innerText = produit.titre;
     document.getElementById('prod-img').src = produit.image;
-    document.getElementById('prod-price').innerText = produit.prix;
+    document.getElementById('prod-price').innerText = "Prix : " + produit.prix;
     document.getElementById('prod-desc').innerText = produit.description;
 } else {
     console.error("Produit non trouvé dans le catalogue !");
