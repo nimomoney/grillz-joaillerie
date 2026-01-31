@@ -1,6 +1,6 @@
 /* Couleurs de base */
 :root {
-    --gold: #d4af37;
+    --green: #054d11;
     --black: #0a0a0a;
     --dark-grey: #1a1a1a;
     --white: #ffffff;
@@ -39,7 +39,7 @@ nav {
 }
 
 .logo span {
-    color: var(--gold);
+    color: var(--green);
 }
 
 nav ul {
@@ -60,7 +60,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--gold);
+    color: var(--green);
 }
 
 /* Section Hero */
@@ -72,7 +72,7 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1511551203524-9a24350a5771?auto=format&fit=crop&w=1200');
+                url('./image/grillzbackground.jpeg');
     background-size: cover;
     background-position: center;
 }
@@ -86,7 +86,7 @@ nav ul li a:hover {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--gold);
+    background-color: var(--green);
     color: var(--black);
     text-decoration: none;
     font-weight: bold;
@@ -97,7 +97,7 @@ nav ul li a:hover {
 
 .btn:hover {
     transform: scale(1.05);
-    background-color: #f1c40f;
+    background-color: #0eb32a;
 }
 
 /* Galerie */
@@ -109,7 +109,7 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 50px;
     font-size: 2rem;
-    color: var(--gold);
+    color: var(--green);
 }
 
 .grid {
@@ -128,7 +128,7 @@ nav ul li a:hover {
 }
 
 .card:hover {
-    border-color: var(--gold);
+    border-color: var(--green);
 }
 
 .card img {
@@ -154,7 +154,7 @@ footer {
 }
 
 .socials a {
-    color: var(--gold);
+    color: var(--green);
     text-decoration: none;
 }
 
@@ -180,7 +180,7 @@ footer {
     width: 100%;
     max-width: 500px;
     border-radius: 10px;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--green);
 }
 
 .product-details {
@@ -189,7 +189,7 @@ footer {
 }
 
 .back-link {
-    color: var(--gold);
+    color: var(--green);
     text-decoration: none;
     font-weight: bold;
 }
