@@ -163,3 +163,33 @@ footer {
     opacity: 0.5;
     margin-top: 20px;
 }
+
+/* On ajoute de l'espace en haut pour compenser la nav fixée */
+.product-container {
+    padding-top: 120px; /* Ajuste cette valeur selon la hauteur de ta nav */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    border: 1px solid var(--gold);
+}
+
+.product-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.back-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+}
