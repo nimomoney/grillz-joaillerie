@@ -1,21 +1,30 @@
 // produits.js
 export const catalogue = {
-    "gold": {
+    "1": {
         "titre": "Grillz en or",
-        "prix": "Sur devis",
+        "prix": "No data",
         "image": "./image/grillzor.jpeg",
-        "description": "Or massif 18 carats avec une finition diamantée pour un éclat maximal."
+        "description": "No data",
+        "materiau": "Or Jaune 18K",
+        "delai": "No data",
+        "sertissage": "No data"
     },
-    "diamond": {
-        "titre": "Iced Out Diamond",
-        "prix": "Sur devis uniquement",
+    "2": {
+        "titre": "Grillz en argent",
+        "prix": "No data",
         "image": "./image/grillzargent.jpeg",
-        "description": "Serti de diamants naturels sélectionnés pour leur pureté exceptionnelle."
+        "description": "No data",
+        "materiau": "No data",
+        "delai": "No data",
+        "sertissage": "Aucun"
     },
-    "silver": {
+    "3": {
         "titre": "Grillz serti étoile",
-        "prix": "50000",
+        "prix": "No data",
         "image": "./image/grillzma.jpeg",
-        "description": "Serti de diamants naturels sélectionnés pour leur pureté exceptionnelle."
+        "description": "No data",
+        "materiau": "No data",
+        "delai": "No data",
+        "sertissage": "Oui"
     }
 };

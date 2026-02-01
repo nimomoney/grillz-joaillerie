@@ -213,6 +213,9 @@ nav ul li a:hover {
     font-weight: bold;
     font-size: 0.9rem;
 }
+.specs{
+    list-style: none;
+}
 
 /* =========================================
    5. FOOTER
