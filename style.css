@@ -284,3 +284,22 @@ footer {
         text-align: center;
     }
 }
+/* Uniquement pour les téléphones */
+@media (max-width: 768px) {
+    .hero {
+        /* On réduit la hauteur pour que l'image ne soit pas étirée sur un écran vertical */
+        min-height: 50vh; 
+        
+        /* On change 'cover' par 'contain' si tu veux voir l'image entière sans rognage */
+        /* Ou on garde 'cover' mais on ajuste la position */
+        background-size: contain; 
+        background-repeat: no-repeat;
+        
+        /* On remonte un peu le contenu pour compenser la taille réduite */
+        padding-top: 80px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* On réduit aussi le texte pour qu'il tienne sur l'image */
+    }
+}
