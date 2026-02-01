@@ -1,9 +1,12 @@
-/* Couleurs de base */
+/* =========================================
+   1. VARIABLES ET BASE
+   ========================================= */
 :root {
     --green: #054d11;
     --black: #0a0a0a;
     --dark-grey: #1a1a1a;
     --white: #ffffff;
+    --light-green: #0eb32a;
 }
 
 * {
@@ -12,24 +15,34 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--black);
     color: var(--white);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Important pour le footer en bas */
 }
 
-/* Navigation */
+/* =========================================
+   2. NAVIGATION
+   ========================================= */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.95);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: 0.3s;
 }
 
 .logo {
@@ -63,14 +76,17 @@ nav ul li a:hover {
     color: var(--green);
 }
 
-/* Section Hero */
+/* =========================================
+   3. SECTIONS PRINCIPALES (HERO & GALERIE)
+   ========================================= */
 .hero {
-    height: 80vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 5%;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('./image/grillzbackground.jpeg');
     background-size: cover;
@@ -78,7 +94,7 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 8vw, 3.5rem); /* Taille adaptative */
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
@@ -97,12 +113,12 @@ nav ul li a:hover {
 
 .btn:hover {
     transform: scale(1.05);
-    background-color: #0eb32a;
+    background-color: var(--light-green);
 }
 
-/* Galerie */
 .gallery {
-    padding: 80px 5%;
+    padding: 100px 5%;
+    min-height: 100vh;
 }
 
 .gallery h2 {
@@ -112,9 +128,10 @@ nav ul li a:hover {
     color: var(--green);
 }
 
+/* Grille responsive */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -129,6 +146,7 @@ nav ul li a:hover {
 
 .card:hover {
     border-color: var(--green);
+    transform: translateY(-5px);
 }
 
 .card img {
@@ -142,11 +160,68 @@ nav ul li a:hover {
     font-size: 1.2rem;
 }
 
-/* Footer */
+/* =========================================
+   4. PAGES PRODUITS & "QUI SUIS-JE"
+   ========================================= */
+.product-container {
+    flex: 1; /* Pousse le footer vers le bas */
+    padding-top: 140px; 
+    padding-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.product-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--green);
+    object-fit: cover;
+}
+
+.product-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.category {
+    color: var(--green);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.back-link {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
 footer {
     padding: 60px 5%;
     text-align: center;
     background-color: var(--dark-grey);
+    width: 100%;
 }
 
 .socials {
@@ -156,6 +231,7 @@ footer {
 .socials a {
     color: var(--green);
     text-decoration: none;
+    margin: 0 10px;
 }
 
 .copyright {
@@ -164,32 +240,47 @@ footer {
     margin-top: 20px;
 }
 
-/* On ajoute de l'espace en haut pour compenser la nav fixée */
-.product-container {
-    padding-top: 120px; /* Ajuste cette valeur selon la hauteur de ta nav */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding-left: 5%;
-    padding-right: 5%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* =========================================
+   6. MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+
+/* Tablettes et mobiles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .product-container {
+        padding-top: 180px; /* Plus d'espace car la nav est plus haute */
+        text-align: center;
+    }
+
+    .product-image {
+        order: -1; /* L'image reste en haut sur mobile */
+    }
 }
 
-.product-image img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-    border: 1px solid var(--green);
-}
+/* Petits mobiles */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
 
-.product-details {
-    flex: 1;
-    min-width: 300px;
-}
+    .grid {
+        grid-template-columns: 1fr;
+    }
 
-.back-link {
-    color: var(--green);
-    text-decoration: none;
-    font-weight: bold;
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
