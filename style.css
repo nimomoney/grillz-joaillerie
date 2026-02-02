@@ -306,3 +306,52 @@ footer {
         font-size: 1.8rem; /* On réduit aussi le texte pour qu'il tienne sur l'image */
     }
 }
+/* =========================================
+   7. OPTIMISATION GRANDS ÉCRANS (FULL ZOOM)
+   ========================================= */
+@media (min-width: 1600px) {
+    /* On augmente la taille de référence pour que tout grandisse (textes, marges) */
+    :root {
+        font-size: 18px; 
+    }
+
+    /* On laisse le conteneur s'étaler plus largement */
+    .product-container, .gallery {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /* On booste les titres pour qu'ils imposent */
+    .hero h1 {
+        font-size: 6rem;
+    }
+
+    .product-details h1 {
+        font-size: 4rem;
+    }
+
+    /* On agrandit les cartes pour qu'elles remplissent le vide */
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 50px;
+    }
+
+    .card img {
+        height: 400px; /* Des images plus grandes dans la galerie */
+    }
+
+    /* On agrandit l'image produit sur la page article */
+    .product-image img {
+        max-width: 700px;
+    }
+
+    /* On augmente les boutons et liens */
+    .btn {
+        padding: 20px 50px;
+        font-size: 1.2rem;
+    }
+    
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+}
